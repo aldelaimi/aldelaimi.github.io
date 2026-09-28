@@ -1,6 +1,6 @@
 {
-  "name": "Sales Order App",
-  "short_name": "Sales Order",
+  "name": "Delaimi App",
+  "short_name": "Delaimi App",
   "description": "Take customer orders, collect signatures and send order PDFs.",
   "id": "/",
   "start_url": "/",
