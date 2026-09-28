@@ -8,25 +8,25 @@
     URL (the one ending in /exec) between the quotes on the APP_URL line below.
   -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#12315c">
+  <meta name="theme-color" content="#a80b11">
   <title>Delaimi App</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <style>
-    html, body { margin: 0; height: 100%; background: #12315c; overflow: hidden; }
+    html, body { margin: 0; height: 100%; background: #a80b11; overflow: hidden; }
     #app { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; background: #f6f7fb; }
     .screen { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
-              background: linear-gradient(135deg, #12315c 0%, #0b2140 55%, #5b21b6 100%); color: #fff;
+              background: linear-gradient(135deg, #8c080d 0%, #b40c12 50%, #e8181e 100%); color: #ffffff;
               font-family: Arial, Helvetica, sans-serif; text-align: center; padding: 24px; transition: opacity .35s; z-index: 2; }
     .screen img { width: 96px; height: 96px; }
     .screen h1 { margin: 0; font-size: 22px; }
-    .screen p { margin: 0; font-size: 14px; opacity: .85; max-width: 300px; }
-    .spinner { width: 34px; height: 34px; border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .9s linear infinite; }
+    .screen p { margin: 0; font-size: 14px; color: rgba(255,255,255,.85); max-width: 300px; }
+    .spinner { width: 34px; height: 34px; border: 3px solid rgba(255,255,255,.3); border-top-color: #ffffff; border-radius: 50%; animation: spin .9s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .hide { opacity: 0; pointer-events: none; }
     .gone { display: none; }
-    button { background: #fff; color: #12315c; border: 0; border-radius: 10px; padding: 12px 26px; font-size: 15px; font-weight: 700; }
+    button { background: #ffffff; color: #b40c12; border: 0; border-radius: 10px; padding: 12px 26px; font-size: 15px; font-weight: 700; }
   </style>
 </head>
 <body>
