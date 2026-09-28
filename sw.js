@@ -1,6 +1,6 @@
 // Keeps the app shell (splash, icons, "No internet" screen) available offline.
 // Orders themselves always come live from Apps Script.
-var CACHE = 'delaimi-app-shell-v8';
+var CACHE = 'delaimi-app-shell-v9';
 var FILES = ['/', '/index.html', '/manifest.json', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', function (e) {
