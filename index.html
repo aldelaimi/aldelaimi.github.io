@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--
+    SALES ORDER APP - Android app shell
+    ONLY ONE THING TO CHANGE IN THIS FILE: paste your Apps Script web app
+    URL (the one ending in /exec) between the quotes on the APP_URL line below.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12315c">
+  <title>Sales Order App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <style>
+    html, body { margin: 0; height: 100%; background: #12315c; overflow: hidden; }
+    #app { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; background: #f6f7fb; }
+    .screen { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+              background: linear-gradient(135deg, #12315c 0%, #0b2140 55%, #5b21b6 100%); color: #fff;
+              font-family: Arial, Helvetica, sans-serif; text-align: center; padding: 24px; transition: opacity .35s; z-index: 2; }
+    .screen img { width: 96px; height: 96px; }
+    .screen h1 { margin: 0; font-size: 22px; }
+    .screen p { margin: 0; font-size: 14px; opacity: .85; max-width: 300px; }
+    .spinner { width: 34px; height: 34px; border: 3px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .9s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hide { opacity: 0; pointer-events: none; }
+    .gone { display: none; }
+    button { background: #fff; color: #12315c; border: 0; border-radius: 10px; padding: 12px 26px; font-size: 15px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div id="splash" class="screen">
+    <img src="icons/icon-192.png" alt="">
+    <h1>Sales Order App</h1>
+    <div class="spinner"></div>
+  </div>
+
+  <div id="offline" class="screen gone">
+    <img src="icons/icon-192.png" alt="">
+    <h1>No internet connection</h1>
+    <p>The Sales Order App needs internet. Check mobile data or Wi-Fi, then try again.</p>
+    <button onclick="location.reload()">Try again</button>
+  </div>
+
+  <iframe id="app" title="Sales Order App" allow="camera; clipboard-read; clipboard-write; fullscreen; web-share"></iframe>
+
+  <script>
+    var APP_URL = "https://script.google.com/macros/s/AKfycbx_2ObFpNJ7uHktn0qcJlSG4nzkVlMJ9I1DGIgxD_pMSEJfygnvRga4x1SRncB1VV19JA/exec";
+
+    var splash = document.getElementById('splash');
+    var offline = document.getElementById('offline');
+    var frame = document.getElementById('app');
+
+    function hideSplash() {
+      splash.classList.add('hide');
+      setTimeout(function () { splash.classList.add('gone'); }, 400);
+    }
+
+    if (!navigator.onLine) {
+      splash.classList.add('gone');
+      offline.classList.remove('gone');
+    } else {
+      frame.addEventListener('load', hideSplash);
+      setTimeout(hideSplash, 8000); // never leave the splash stuck on screen
+      frame.src = APP_URL;
+    }
+
+    window.addEventListener('online', function () {
+      if (!offline.classList.contains('gone')) location.reload();
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    }
+  </script>
+</body>
+</html>
