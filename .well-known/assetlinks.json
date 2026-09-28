@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.aldelaimi.salesorder",
+    "sha256_cert_fingerprints": ["2F:66:1D:86:45:B0:15:5E:0C:6C:09:14:54:3D:F2:E2:78:FF:4A:6D:6F:E4:FE:17:98:2D:78:BD:7C:59:63:E2"]
+  }
+}]
