@@ -2,7 +2,7 @@
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
-        "package_name": "com.aldelaimi.salesorder",
-        "sha256_cert_fingerprints": ["B5:DD:F2:CA:00:86:B5:C6:BC:39:9C:E7:CE:E5:A8:6A:FF:BD:76:A4:DC:6E:42:06:BA:11:BF:1C:F1:27:94:D3"]
+        "package_name": "io.github.aldelaimi.twa",
+        "sha256_cert_fingerprints": ["99:94:27:8B:9F:5B:8A:7B:D9:7E:3D:0F:1A:7A:AD:0F:60:B7:67:9E:0A:EA:E4:CF:00:BB:00:A0:92:58:99:FE"]
       }
     }]
